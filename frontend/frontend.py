@@ -35,8 +35,15 @@ if st.button("Predict Premium Category"):
     try:
         response = requests.post(API_URL, json=input_data)
         if response.status_code == 200:
-            result = response.json()
-            st.success(f"Predicted Insurance Premium Category: **{result['predicted_category']}**")
+            result = response.json()["predicted_category"]
+
+            st.success(f"Predicted Category: **{result['predicted_category']}**")
+            st.metric("Confidence", f"{round(result['confidence'] * 100, 1)}%")
+
+            st.subheader("Class Probabilities")
+            probs = result["class_probabilities"]
+            for category, prob in probs.items():
+                st.progress(prob, text=f"{category}: {round(prob * 100, 1)}%")
         else:
             st.error(f"API Error: {response.status_code} - {response.text}")
     except requests.exceptions.ConnectionError:

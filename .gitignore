@@ -1,23 +1,69 @@
-# Virtual environment
+# ── Virtual environment ────────────────────────────────────────────────────────
 myenv/
+venv/
+.venv/
+env/
 
-# Python cache
+# ── Python cache & compiled files ─────────────────────────────────────────────
 __pycache__/
-*.pyc
+*.py[cod]
+*$py.class
 *.pyo
+*.pyd
 
-# Jupyter
-.ipynb_checkpoints/
+# ── Distribution / packaging ───────────────────────────────────────────────────
+dist/
+build/
+*.egg-info/
+*.egg
+MANIFEST
 
-# Trained model
+# ── Trained model artifacts ────────────────────────────────────────────────────
 *.pkl
+*.joblib
+*.h5
+*.pt
+*.pth
 
-# Data
+# ── Data files ─────────────────────────────────────────────────────────────────
 data/
+*.csv
+*.parquet
+*.json.gz
 
-# Environment variables
+# ── Jupyter ────────────────────────────────────────────────────────────────────
+.ipynb_checkpoints/
+*.ipynb_tmp
+
+# ── Test & coverage ────────────────────────────────────────────────────────────
+.pytest_cache/
+.coverage
+htmlcov/
+coverage.xml
+*.junit.xml
+
+# ── Environment variables / secrets ───────────────────────────────────────────
 .env
+.env.*
+*.pem
+*.key
 
-# IDE
+# ── Streamlit ─────────────────────────────────────────────────────────────────
+.streamlit/
+
+# ── IDE / editors ─────────────────────────────────────────────────────────────
 .vscode/
 .idea/
+*.swp
+*.swo
+*~
+
+# ── OS files ──────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+ehthumbs.db
+
+# ── Logs ──────────────────────────────────────────────────────────────────────
+*.log
+logs/
