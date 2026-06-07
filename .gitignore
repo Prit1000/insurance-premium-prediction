@@ -1,8 +1,23 @@
-@"
+# Virtual environment
 myenv/
+
+# Python cache
 __pycache__/
-*.pkl
 *.pyc
-.env
+*.pyo
+
+# Jupyter
 .ipynb_checkpoints/
-"@ | Out-File .gitignore -Encoding utf8
+
+# Trained model
+*.pkl
+
+# Data
+data/
+
+# Environment variables
+.env
+
+# IDE
+.vscode/
+.idea/
